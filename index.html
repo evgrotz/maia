@@ -58,28 +58,18 @@
       fill: currentColor;
     }
 
-    .nav-scroller {
-      position: relative;
-      z-index: 2;
-      height: 2.75rem;
-      overflow-y: hidden;
-      margin: 0 auto;
-      text-align: center;
+    .navbar {
+      transition: background-color 0.3s ease;
     }
 
-    .nav-scroller .nav {
-      display: flex;
-      flex-wrap: nowrap;
-      padding-bottom: 1rem;
-      margin-top: -1px;
-      overflow-x: auto;
-      text-align: center;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      margin: 0 auto;
-      text-align: center;
+    .navbar.transparent {
+      background-color: transparent;
     }
-    
+
+    .navbar.solid {
+      background-color: rgba(0, 0, 0, 0.8); 
+    }
+
     .btn-bd-primary {
       --bd-violet-bg: #712cf9;
       --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -117,10 +107,6 @@
       .carousel-inner img{
         height: 300px;
       }
-    }
-    
-    .fded {
-      opacity: 1;
     }
     
     .testeteste {
@@ -254,7 +240,7 @@
 <body>
 
   <header data-bs-theme="dark">
-    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top fded">
+    <div class="navbar navbar-dark bg-dark shadow-sm fixed-top">
       <div class="container">
         <a href="#" class="navbar-brand d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-straw"
@@ -514,6 +500,23 @@
       $('.item').height(maxHeight);
     });
   </script>
+
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  // Começa com a classe 'transparent'
+  navbar.classList.add('transparent');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY === 0) {
+      navbar.classList.add('transparent');
+      navbar.classList.remove('solid');
+    } else {
+      navbar.classList.add('solid');
+      navbar.classList.remove('transparent');
+    }
+  });
+</script>
 
 </body>
 
