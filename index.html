@@ -63,7 +63,9 @@
     }
 
     .navbar.transparent {
-      background-color: transparent;
+      background: url('/images/nav1.png') ;
+      background-size: cover;no-repeat center
+      background-position: top center;
     }
 
     .navbar.solid {
@@ -221,7 +223,6 @@
   <header data-bs-theme="dark">
     <div class="navbar navbar-dark fixed-top">
       <div class="container-fluid d-flex align-items-center justify-content-between">
-        <!-- Ícone e texto Drinks à esquerda -->
         <a href="#" class="navbar-brand d-flex align-items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cup-straw"
             viewBox="0 0 16 16">
@@ -230,12 +231,10 @@
           </svg>
           <strong style="margin-left: 8px;">Drinks</strong>
         </a>
-
-        <!-- Links à direita -->
         <div class="d-flex align-items-center ms-auto" style="margin-right: 50px;">
-          <a href="#cardapio" class="nav-link text-white"
+          <a href="#cardapio" class="nav-link text-black"
             style="font-family: 'Permanent Marker', cursive; font-size: 1.2rem;">Cardápio</a>
-          <a href="#footer" class="nav-link text-white"
+          <a href="#footer" class="nav-link text-black"
             style="font-family: 'Permanent Marker', cursive; font-size: 1.2rem; margin-left: 70px;">Sobre Nós</a>
         </div>
       </div>
@@ -486,9 +485,7 @@
 
   <script>
     const navbar = document.querySelector('.navbar');
-
     navbar.classList.add('transparent');
-
     window.addEventListener('scroll', () => {
       if (window.scrollY === 0) {
         navbar.classList.add('transparent');
