@@ -212,32 +212,149 @@
     }
 
     .navlogo {
-    width: 100%;
-    height: auto;
-    max-height: 100px;
-    position: fixed;
-    top: 0;
-  }
+      width: 100%;
+      height: auto;
+      max-height: 100px;
+      position: fixed;
+      top: 0;
+    }
 
-  .navlogoimg {
-    width: 155%;
-    height: auto;
-    height: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
+    .navlogoimg {
+      width: 155%;
+      height: auto;
+      height: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
 
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1051;
+    }
+
+    .overlay img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .overlay.active {
+      display: flex;
+    }
+
+    /* Estilo modernizado para os cards */
+    .card {
+      background-color: #333;
+      /* Cinza escuro */
+      color: #f8f9fa;
+      /* Texto branco para contraste */
+      font-family: 'Permanent Marker', cursive;
+      /* Fonte igual à da navbar */
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      /* Efeito de destaque ao passar o mouse */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      /* Sombra para destaque */
+    }
+
+    .card-title {
+      color: #ffffff;
+      /* Branco para contraste no fundo escuro */
+      font-size: 1.5rem;
+      /* Tamanho maior para destacar o título */
+    }
+
+    .card-text {
+      color: #e0e0e0;
+      /* Cinza claro para o texto */
+      font-size: 1rem;
+    }
+
+    .card-img-top {
+      object-fit: cover;
+      filter: grayscale(30%);
+      /* Filtro para harmonizar com o visual moderno */
+      border-radius: 5px 5px 0 0;
+      /* Bordas arredondadas no topo */
+    }
+
+    .btn-outline-secondary {
+      color: #f8f9fa;
+      border-color: #f8f9fa;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #f8f9fa;
+      /* Inverte cores no hover */
+      color: #333;
+    }
+
+    /* Estilo para o card como botão */
+    .card-link {
+      color: inherit;
+      /* Mantém a cor do texto */
+      text-decoration: none;
+      /* Remove sublinhado */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card-link:hover {
+      transform: scale(1.05);
+      /* Aumenta levemente o card no hover */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      /* Sombra para efeito de botão */
+    }
+
+    .card-title,
+    .card-text {
+      font-family: 'Permanent Marker', cursive;
+      color: #ffffff;
+    }
+
+    .card-img-top {
+      filter: grayscale(30%);
+      border-radius: 5px 5px 0 0;
+    }
+
+    /*img dos cards catalogo*/
+    .card-img-top {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    /*img dos cards no overlay*/
+    .overlay img {
+      max-width: 600px;
+      max-height: 800px;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+    }
   </style>
 </head>
 
 <body>
 
   <!-- Navbar -->
-   <div class="navlogo">
-     <img src="images/nav1.svg" class="navlogoimg">
-   </div>
+  <div class="navlogo">
+    <img src="images/nav1.svg" class="navlogoimg">
+  </div>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
       <img src="/images/cup-straw.svg" alt="" width="30" height="24" class="d-inline-block">
@@ -293,25 +410,113 @@
 
           <!-- Exemplo de Card -->
           <div class="col">
-            <div class="card shadow-sm h-100 d-flex flex-column">
-              <img src="images/big1.webp" class="card-img-top" alt="Caipirinha"
-                style="height: 225px; object-fit: cover;">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Caipirinha</h5>
                 <p class="card-text">Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo.</p>
-                <div class="mt-auto">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Ver</button>
-                </div>
               </div>
-            </div>
+            </a>
           </div>
 
-          <!-- Repita os cards para os outros drinks -->
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="/images/pinacolada.jpg" class="card-img-top" alt="Piña Colada">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Piña Colada</h5>
+                <p class="card-text">Oriunda de Porto Rico, a tradicional Piña Colada é feita de rum, leite de coco e
+                  suco de abacaxi.</p>
+              </div>
+            </a>
+          </div>
 
-          <!-- ... (Outros cards) -->
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/negroni.jpg" class="card-img-top" alt="Negroni">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Negroni</h5>
+                <p class="card-text">Agora, imagine 1 dose de gim, 1 dose de Campari, 1 dose de vermute tinto e 1 rodela
+                  de laranja. Junte tudo e adicione cubos de gelo para servir bem geladinho.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/cosmopolitan.jpg" class="card-img-top" alt="Cosmopolitan">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Cosmopolitan</h5>
+                <p class="card-text">O Cosmopolitan é uma bebida que envolve vodca, licor de laranja ou suco de limão,
+                  suco de Cranberry.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/margarita.jpg" class="card-img-top" alt="Margarita">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Margarita</h5>
+                <p class="card-text">Leva tequila, suco de limão e licor de laranja.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/mojito.jpg" class="card-img-top" alt="Mojito">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Mojito</h5>
+                <p class="card-text">Drink cubano à base de rum branco, açúcar, hortelã, limão e água gaseificada.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/sexonthebeach.webp" class="card-img-top" alt="Sex on the Beach">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Sex on the Beach</h5>
+                <p class="card-text">Leva vodka gelada, licor de pêssego, suco de laranja, algumas gotas de xarope de
+                  groselha para decorar e 2 pedras de gelo moídas.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/hankypanky.png" class="card-img-top" alt="Hanky Panky">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Hanky Panky</h5>
+                <p class="card-text">London Dry Gin, vermute doce e Fernet são seus ingredientes, e esse último dá um
+                  toque mentolado delicioso à bebida.</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
+              <img src="images/aperolspritz.jpg" class="card-img-top" alt="Aperol Spritz">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Aperol Spritz</h5>
+                <p class="card-text">Feita a partir da infusão de raízes e ervas, entre elas o ruibarbo, que dá o toque
+                  amargo da bebida e também a cor peculiar, laranjas e outras especiarias combinadas à água, álcool e
+                  açúcar.</p>
+              </div>
+            </a>
+          </div>
+
 
         </div>
       </div>
+    </div>
+
+    <div class="overlay" id="imageOverlay">
+      <img id="overlayImage" src="" alt="Overlay Image">
+    </div>
+
+    </div>
+    </div>
     </div>
 
     <div>
@@ -356,6 +561,40 @@
         navbar.classList.remove('solid');
       }
     });
+  </script>
+
+  <script>
+    // Referências ao overlay e à imagem
+    const overlay = document.getElementById('imageOverlay');
+    const overlayImage = document.getElementById('overlayImage');
+
+    // Função para abrir o overlay com a imagem específica
+    function showOverlay(imageSrc) {
+      overlayImage.src = imageSrc;
+      overlay.classList.add('active');
+    }
+
+    // Função para fechar o overlay
+    function closeOverlay() {
+      overlay.classList.remove('active');
+    }
+
+    // Event listener para fechar o overlay ao clicar fora da imagem
+    overlay.addEventListener('click', (event) => {
+      if (event.target === overlay) {
+        closeOverlay();
+      }
+    });
+
+    // Event listeners para os cards inteiros
+    document.querySelectorAll('.card-link').forEach((card) => {
+      card.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita comportamento padrão do link
+        const cardImage = card.querySelector('img').src; // Obtém a imagem do card
+        showOverlay(cardImage); // Exibe o overlay com a imagem
+      });
+    });
+
   </script>
 
 </body>
