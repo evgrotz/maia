@@ -210,12 +210,34 @@
     .carousel-control-next {
       z-index: 3;
     }
+
+    .navlogo {
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    position: fixed;
+    top: 0;
+  }
+
+  .navlogoimg {
+    width: 155%;
+    height: auto;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
   </style>
 </head>
 
 <body>
 
   <!-- Navbar -->
+   <div class="navlogo">
+     <img src="images/nav1.svg" class="navlogoimg">
+   </div>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
       <img src="/images/cup-straw.svg" alt="" width="30" height="24" class="d-inline-block">
@@ -229,9 +251,6 @@
     </div>
   </nav>
 
-  <div class="navlogo">
-    <img src="images/nav1.svg">
-  </div>
 
   </div>
 
