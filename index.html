@@ -17,7 +17,7 @@
 
   <style>
     /* Estilos personalizados */
-    
+
     /* Navbar */
     .navbar {
       position: fixed;
@@ -76,15 +76,16 @@
       justify-content: center;
     }
 
-    .navbar .nav-link {
-      font-size: 2rem;
+      .navbar .nav-link {
+        font-size: 2rem;
+      }
+
+      .navlogoimg {
+        height: 10px;
+      }
+
     }
 
-    .navlogoimg {
-      height: 10px;
-    }
-
-  } 
     .navlogo {
       z-index: 3;
       pointer-events: none;
@@ -225,7 +226,7 @@
     }
 
 
-    /* Overlay */
+    /* Overlay geral */
     .overlay {
       position: fixed;
       top: 0;
@@ -234,23 +235,110 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.8);
       display: none;
-      align-items: center;
+      /* Escondido inicialmente */
       justify-content: center;
+      align-items: center;
       z-index: 1051;
+      padding: 20px;
     }
 
-    /*img dos cards no overlay*/
-    .overlay img {
-      max-width: 600px;
-      max-height: 800px;
-      width: auto;
-      height: auto;
+    /* Conteúdo do overlay */
+    .overlay-content {
+      display: flex;
+      flex-direction: row;
+      background-color: #333;
+      color: #f8f9fa;
       border-radius: 10px;
+      max-width: 80%;
+      max-height: 90%;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
-    
+
+    /* Imagem dentro do overlay */
+    .overlay img {
+      width: 50%;
+      max-width: 400px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px 0 0 10px;
+    }
+
+    /* Texto do overlay */
+    .overlay-text {
+      position: relative;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: 'Permanent Marker', cursive;
+    }
+
+    /* Botão de Fechamento no Overlay */
+    .overlay-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .overlay-close:hover {
+      color: #ff4d4d;
+    }
+
+    /* Estilos para título e descrição */
+    .overlay-title {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #f1f1f1;
+    }
+
+    .overlay-description {
+      font-size: 1.1rem;
+      color: #e0e0e0;
+      line-height: 1.5;
+    }
+
+    /* Ajustes para telas pequenas */
+    @media (max-width: 768px) {
+      .overlay-content {
+        flex-direction: column;
+        /* Muda para coluna em telas pequenas */
+        width: 90%;
+        /* Aumenta a largura para caber melhor */
+      }
+
+      .overlay img {
+        width: 100%;
+        /* Imagem ocupa toda a largura no topo */
+        max-height: 250px;
+        /* Limita a altura da imagem em telas pequenas */
+        border-radius: 10px 10px 0 0;
+      }
+
+      .overlay-text {
+        padding: 15px;
+      }
+
+      .overlay-title {
+        font-size: 1.5rem;
+      }
+
+      .overlay-description {
+        font-size: 1rem;
+      }
+    }
+
     .overlay.active {
       display: flex;
+      /* Mostra o overlay quando está ativo */
     }
+
 
     /* Estilo modernizado para os cards */
     .card {
@@ -324,7 +412,6 @@
       font-family: 'Permanent Marker', cursive;
       color: #ffffff;
     }
-
   </style>
 </head>
 
@@ -380,115 +467,122 @@
       <p class="cardapio-text">Escolha seu drink e peça diretamente no balcão</p>
     </div>
 
-    <div class="album py-5 bg-body-tertiary">
+    <div class="album py-5 bg-bod y-tertiary">
       <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-          <!-- Exemplo de Card -->
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Caipirinha"
+               data-description="Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo."
+               data-img-src="images/caipirinha.webp" style="text-decoration: none;">
+              <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Caipirinha</h5>
-                <p class="card-text">Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="/images/pinacolada.jpg" class="card-img-top" alt="Piña Colada">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Piña Colada"
+              data-description="Oriunda de Porto Rico, a tradicional Piña Colada é feita de rum, leite de coco e suco de abacaxi."
+              data-img-src="/images/pinacolada.jpg" style="text-decoration: none;">
+              <img src="/images/pinacolada.jpg" class="card-img-top" alt="Piña Colada" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Piña Colada</h5>
-                <p class="card-text">Oriunda de Porto Rico, a tradicional Piña Colada é feita de rum, leite de coco e
-                  suco de abacaxi.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/negroni.jpg" class="card-img-top" alt="Negroni">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Negroni"
+              data-description="Imagine 1 dose de gim, 1 dose de Campari, 1 dose de vermute tinto e 1 rodela de laranja. Junte tudo e adicione cubos de gelo para servir bem geladinho."
+              data-img-src="images/negroni.jpg" style="text-decoration: none;">
+              <img src="images/negroni.jpg" class="card-img-top" alt="Negroni" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Negroni</h5>
-                <p class="card-text">Agora, imagine 1 dose de gim, 1 dose de Campari, 1 dose de vermute tinto e 1 rodela
-                  de laranja. Junte tudo e adicione cubos de gelo para servir bem geladinho.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/cosmopolitan.jpg" class="card-img-top" alt="Cosmopolitan">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Cosmopolitan"
+              data-description="O Cosmopolitan é uma bebida que envolve vodka, licor de laranja ou suco de limão, suco de Cranberry."
+              data-img-src="images/cosmopolitan.jpg" style="text-decoration: none;">
+              <img src="images/cosmopolitan.jpg" class="card-img-top" alt="Cosmopolitan" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Cosmopolitan</h5>
-                <p class="card-text">O Cosmopolitan é uma bebida que envolve vodca, licor de laranja ou suco de limão,
-                  suco de Cranberry.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/margarita.jpg" class="card-img-top" alt="Margarita">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Margarita"
+              data-description="Leva tequila, suco de limão e licor de laranja." data-img-src="images/margarita.jpg"
+              style="text-decoration: none;">
+              <img src="images/margarita.jpg" class="card-img-top" alt="Margarita" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Margarita</h5>
-                <p class="card-text">Leva tequila, suco de limão e licor de laranja.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/mojito.jpg" class="card-img-top" alt="Mojito">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Mojito"
+              data-description="Drink cubano à base de rum branco, açúcar, hortelã, limão e água gaseificada."
+              data-img-src="images/mojito.jpg" style="text-decoration: none;">
+              <img src="images/mojito.jpg" class="card-img-top" alt="Mojito" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Mojito</h5>
-                <p class="card-text">Drink cubano à base de rum branco, açúcar, hortelã, limão e água gaseificada.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/sexonthebeach.webp" class="card-img-top" alt="Sex on the Beach">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Sex on the Beach"
+              data-description="Leva vodka gelada, licor de pêssego, suco de laranja, algumas gotas de xarope de groselha para decorar e 2 pedras de gelo moídas."
+              data-img-src="images/sexonthebeach.webp" style="text-decoration: none;">
+              <img src="images/sexonthebeach.webp" class="card-img-top" alt="Sex on the Beach" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Sex on the Beach</h5>
-                <p class="card-text">Leva vodka gelada, licor de pêssego, suco de laranja, algumas gotas de xarope de
-                  groselha para decorar e 2 pedras de gelo moídas.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/hankypanky.png" class="card-img-top" alt="Hanky Panky">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Hanky Panky"
+              data-description="London Dry Gin, vermute doce e Fernet são seus ingredientes, e esse último dá um toque mentolado delicioso à bebida."
+              data-img-src="images/hankypanky.png" style="text-decoration: none;">
+              <img src="images/hankypanky.png" class="card-img-top" alt="Hanky Panky" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Hanky Panky</h5>
-                <p class="card-text">London Dry Gin, vermute doce e Fernet são seus ingredientes, e esse último dá um
-                  toque mentolado delicioso à bebida.</p>
               </div>
             </a>
           </div>
 
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" style="text-decoration: none;">
-              <img src="images/aperolspritz.jpg" class="card-img-top" alt="Aperol Spritz">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Aperol Spritz"
+              data-description="Feita a partir da infusão de raízes e ervas, entre elas o ruibarbo, que dá o toque amargo da bebida e também a cor peculiar, laranjas e outras especiarias combinadas à água, álcool e açúcar."
+              data-img-src="images/aperolspritz.jpg" style="text-decoration: none;">
+              <img src="images/aperolspritz.jpg" class="card-img-top" alt="Aperol Spritz" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Aperol Spritz</h5>
-                <p class="card-text">Feita a partir da infusão de raízes e ervas, entre elas o ruibarbo, que dá o toque
-                  amargo da bebida e também a cor peculiar, laranjas e outras especiarias combinadas à água, álcool e
-                  açúcar.</p>
               </div>
             </a>
           </div>
-
 
         </div>
       </div>
     </div>
 
     <div class="overlay" id="imageOverlay">
-      <img id="overlayImage" src="" alt="Overlay Image">
+      <div class="overlay-content">
+        <img id="overlayImage" src="" alt="Overlay Image">
+        <div class="overlay-text">
+          <button class="overlay-close" onclick="closeOverlay()">×</button>
+          <h3 id="overlayTitle" class="overlay-title"></h3>
+          <p id="overlayDescription" class="overlay-description"></p>
+        </div>
+      </div>
     </div>
 
     </div>
@@ -540,13 +634,17 @@
   </script>
 
   <script>
-    // Referências ao overlay e à imagem
+    // Referências ao overlay e ao conteúdo do overlay
     const overlay = document.getElementById('imageOverlay');
     const overlayImage = document.getElementById('overlayImage');
+    const overlayTitle = document.getElementById('overlayTitle');
+    const overlayDescription = document.getElementById('overlayDescription');
 
-    // Função para abrir o overlay com a imagem específica
-    function showOverlay(imageSrc) {
+    // Função para abrir o overlay com a imagem e descrição específica
+    function showOverlay(imageSrc, title, description) {
       overlayImage.src = imageSrc;
+      overlayTitle.textContent = title;
+      overlayDescription.textContent = description;
       overlay.classList.add('active');
     }
 
@@ -555,19 +653,14 @@
       overlay.classList.remove('active');
     }
 
-    // Event listener para fechar o overlay ao clicar fora da imagem
-    overlay.addEventListener('click', (event) => {
-      if (event.target === overlay) {
-        closeOverlay();
-      }
-    });
-
-    // Event listeners para os cards inteiros
+    // Event listeners para os cards
     document.querySelectorAll('.card-link').forEach((card) => {
       card.addEventListener('click', (event) => {
         event.preventDefault(); // Evita comportamento padrão do link
-        const cardImage = card.querySelector('img').src; // Obtém a imagem do card
-        showOverlay(cardImage); // Exibe o overlay com a imagem
+        const cardImage = card.getAttribute('data-img-src');
+        const cardTitle = card.getAttribute('data-title');
+        const cardDescription = card.getAttribute('data-description');
+        showOverlay(cardImage, cardTitle, cardDescription);
       });
     });
 
