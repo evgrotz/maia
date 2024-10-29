@@ -64,17 +64,15 @@
 
     @media (max-width: 457px) {
       .navmedia {
-        transform: scaleX(1.5);
-        margin-left: 70px;
         position: fixed;
       }
 
-    .navbar .nav-center {
-      flex: 1;
-      margin-left: 225px;
-      position: fixed;
-      justify-content: center;
-    }
+      .navbar .nav-center {
+        flex: 1;
+        margin-left: 225px;
+        position: fixed;
+        justify-content: center;
+      }
 
       .navbar .nav-link {
         font-size: 2rem;
@@ -82,6 +80,28 @@
 
       .navlogoimg {
         height: 10px;
+      }
+
+      .navbar .navbar-brand img {
+        width: 80px;
+        /* Aumente este valor para ajustar o tamanho desejado */
+        height: 70px;
+        /* Ajuste conforme necessário */
+        margin-left: -5px;
+      }
+
+      .navbar .brand-text {
+        display: none;
+        /* Oculta o texto "Drinks" na resolução especificada */
+      }
+
+      .navbar.solid .brand-text {
+        display: inline;
+        /* Exibe o texto "Drinks" na navbar sólida */
+      }
+      
+      .navbar.solid .navbar-brand img {
+        margin-left: -5px;
       }
 
     }
@@ -423,8 +443,8 @@
   </div>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
-      <img src="/images/cup-straw.svg" alt="" width="30" height="24" class="d-inline-block">
-      Drinks
+      <img src="/images/cup-straw.svg" alt="navbrand" width="30" height="24" class="d-inline-block">
+      <span class="brand-text">Drinks</span>
     </a>
     <div class="nav-center">
       <a href="#cardapio" class="nav-link">Cardápio</a>
@@ -458,7 +478,7 @@
       </button>
 
       <!-- Imagem sobreposta -->
-      <img src="upper1.png" alt="upper1" class="upperteste">
+      <img src="upper1.png" alt="upper1" class="upperteste" loading="eager">
     </div>
 
     <!-- Seção do Cardápio -->
@@ -473,8 +493,8 @@
 
           <div class="col">
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Caipirinha"
-               data-description="Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo."
-               data-img-src="images/caipirinha.webp" style="text-decoration: none;">
+              data-description="Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo."
+              data-img-src="images/caipirinha.webp" style="text-decoration: none;">
               <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha" loading="lazy">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Caipirinha</h5>
