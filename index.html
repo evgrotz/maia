@@ -63,9 +63,16 @@
     }
 
     @media (max-width: 457px) {
+      .navmedia {
+        transform: scaleX(1.5);
+        margin-left: 70px;
+        position: fixed;
+      }
+
     .navbar .nav-center {
       flex: 1;
-      display: flex;
+      margin-left: 225px;
+      position: fixed;
       justify-content: center;
     }
 
@@ -325,7 +332,7 @@
 
   <!-- Navbar -->
   <div class="navlogo">
-    <img src="images/nav1.svg" class="navlogoimg">
+    <img src="images/nav1.svg" class="navlogoimg navmedia">
   </div>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
