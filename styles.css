@@ -1,0 +1,419 @@
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    z-index: 1050;
+}
+
+.navbar .navbar-brand {
+    color: #ffffff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2.5rem;
+    margin-left: 0;
+}
+
+.navbar .nav-link {
+    color: rgb(0, 0, 0);
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.navbar.solid {
+    background-color: black;
+    background-image: none;
+}
+
+.navbar.solid .nav-link {
+    color: #fff;
+}
+
+.navbar.solid .navbar-brand {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+@media (max-width: 457px) {
+    .navmedia {
+        position: fixed;
+    }
+
+    .navbar .nav-center {
+        flex: 1;
+        margin-left: 225px;
+        position: fixed;
+        justify-content: center;
+    }
+
+    .navbar .nav-link {
+        font-size: 2rem;
+        position: relative;
+        top: -15px;
+    }
+
+    .navbar.solid .nav-link {
+        position: static;
+    }
+
+    .navlogoimg {
+        height: 10px;
+    }
+
+    .navbar .navbar-brand img {
+        width: 80px;
+        /* Aumente este valor para ajustar o tamanho desejado */
+        height: 70px;
+        /* Ajuste conforme necessário */
+        margin-left: -5px;
+    }
+
+    .navbar .brand-text {
+        display: none;
+        /* Oculta o texto "Drinks" na resolução especificada */
+    }
+
+    .navbar.solid .brand-text {
+        display: inline;
+        /* Exibe o texto "Drinks" na navbar sólida */
+    }
+
+    .navbar.solid .navbar-brand img {
+        margin-left: -5px;
+    }
+}
+
+.navlogo {
+    z-index: 3;
+    pointer-events: none;
+    object-fit: cover;
+}
+
+.navlogoimg {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+/* Carousel */
+
+.carousel {
+    position: relative;
+}
+
+.carousel-item {
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Aumenta o tamanho da imagem e do carrossel em resoluções maiores */
+@media (min-width: 1200px) {
+    .carousel-item {
+        height: 700px;
+        /* Aumenta a altura do carrossel */
+    }
+
+    .carousel-item img {
+        width: 120%;
+        /* Expande a largura da imagem para ocupar mais espaço */
+    }
+}
+
+@media (min-width: 1600px) {
+    .carousel-item {
+        height: 900px;
+        /* Aumenta ainda mais a altura para fullscreen */
+    }
+
+    .carousel-item img {
+        width: 140%;
+        /* Expande ainda mais a imagem para preencher completamente */
+    }
+}
+
+
+/* Imagem sobreposta */
+.upperteste {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    /* Limita a largura para evitar cortes */
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Seções adicionais */
+
+.cardapio-title {
+    margin: 0 auto;
+    font-size: 70px;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+.cardapio-text {
+    font-size: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Footer */
+
+.footer {
+    background-color: #192025;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Permanent Marker", cursive;
+}
+
+.about-us {
+    background-color: #192025;
+    color: #F8F9FA;
+    text-align: center;
+    margin-top: -7px;
+}
+
+.about-us-title {
+    font-size: 40px;
+    font-family: "Permanent Marker", cursive;
+}
+
+.barman {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Outros estilos */
+.testeteste {
+    background-color: #F8F9FA;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 3;
+}
+
+
+/* Overlay geral */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    /* Escondido inicialmente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1051;
+    padding: 20px;
+}
+
+/* Conteúdo do overlay */
+.overlay-content {
+    display: flex;
+    flex-direction: row;
+    background-color: #333;
+    color: #f8f9fa;
+    border-radius: 10px;
+    max-width: 80%;
+    max-height: 90%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagem dentro do overlay */
+.overlay img {
+    width: 50%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Texto do overlay */
+.overlay-text {
+    position: relative;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+/* Botão de Fechamento no Overlay */
+.overlay-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.overlay-close:hover {
+    color: #ff4d4d;
+}
+
+/* Estilos para título e descrição */
+.overlay-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #f1f1f1;
+}
+
+.overlay-description {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 768px) {
+    .overlay-content {
+        flex-direction: column;
+        /* Muda para coluna em telas pequenas */
+        width: 90%;
+        /* Aumenta a largura para caber melhor */
+    }
+
+    .overlay img {
+        width: 100%;
+        /* Imagem ocupa toda a largura no topo */
+        max-height: 250px;
+        /* Limita a altura da imagem em telas pequenas */
+        border-radius: 10px 10px 0 0;
+    }
+
+    .overlay-text {
+        padding: 15px;
+    }
+
+    .overlay-title {
+        font-size: 1.5rem;
+    }
+
+    .overlay-description {
+        font-size: 1rem;
+    }
+}
+
+.overlay.active {
+    display: flex;
+    /* Mostra o overlay quando está ativo */
+}
+
+
+/* Estilo modernizado para os cards */
+.card {
+    background-color: #333;
+    /* Cinza escuro */
+    color: #f8f9fa;
+    /* Texto branco para contraste */
+    font-family: 'Permanent Marker', cursive;
+    /* Fonte igual à da navbar */
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Efeito de destaque ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra para destaque */
+}
+
+.card-title {
+    color: #ffffff;
+    /* Branco para contraste no fundo escuro */
+    font-size: 1.5rem;
+    /* Tamanho maior para destacar o título */
+}
+
+.card-text {
+    color: #e0e0e0;
+    /* Cinza claro para o texto */
+    font-size: 1rem;
+}
+
+.card-img-top {
+    height: 225px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    border-radius: 5px 5px 0 0;
+}
+
+.btn-outline-secondary {
+    color: #f8f9fa;
+    border-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #f8f9fa;
+    /* Inverte cores no hover */
+    color: #333;
+}
+
+/* Estilo para o card como botão */
+.card-link {
+    color: inherit;
+    /* Mantém a cor do texto */
+    text-decoration: none;
+    /* Remove sublinhado */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-link:hover {
+    transform: scale(1.05);
+    /* Aumenta levemente o card no hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Sombra para efeito de botão */
+}
+
+.card-title,
+.card-text {
+    font-family: 'Permanent Marker', cursive;
+    color: #ffffff;
+}

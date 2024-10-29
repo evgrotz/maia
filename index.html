@@ -15,424 +15,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <style>
-    /* Estilos personalizados */
+  <link rel="stylesheet" href="styles.css">
 
-    /* Navbar */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      transition: background 0.3s ease-in-out;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 20px;
-      z-index: 1050;
-    }
-
-    .navbar .navbar-brand {
-      color: #ffffff;
-      font-size: 2rem;
-      display: flex;
-      align-items: center;
-      font-family: 'Permanent Marker', cursive;
-      font-size: 2.5rem;
-      margin-left: 0;
-    }
-
-    .navbar .nav-link {
-      color: rgb(0, 0, 0);
-      font-family: 'Permanent Marker', cursive;
-      font-size: 2rem;
-      text-decoration: none;
-    }
-
-    .navbar.solid {
-      background-color: black;
-      background-image: none;
-    }
-
-    .navbar.solid .nav-link {
-      color: #fff;
-    }
-
-    .navbar.solid .navbar-brand {
-      font-size: 1.8rem;
-      color: #fff;
-    }
-
-    @media (max-width: 457px) {
-      .navmedia {
-        position: fixed;
-      }
-
-      .navbar .nav-center {
-        flex: 1;
-        margin-left: 225px;
-        position: fixed;
-        justify-content: center;
-      }
-
-      .navbar .nav-link {
-        font-size: 2rem;
-      }
-
-      .navlogoimg {
-        height: 10px;
-      }
-
-      .navbar .navbar-brand img {
-        width: 80px;
-        /* Aumente este valor para ajustar o tamanho desejado */
-        height: 70px;
-        /* Ajuste conforme necessário */
-        margin-left: -5px;
-      }
-
-      .navbar .brand-text {
-        display: none;
-        /* Oculta o texto "Drinks" na resolução especificada */
-      }
-
-      .navbar.solid .brand-text {
-        display: inline;
-        /* Exibe o texto "Drinks" na navbar sólida */
-      }
-      
-      .navbar.solid .navbar-brand img {
-        margin-left: -5px;
-      }
-
-    }
-
-    .navlogo {
-      z-index: 3;
-      pointer-events: none;
-      object-fit: cover;
-    }
-
-    .navlogoimg {
-      width: 100%;
-      height: 150px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-
-
-    /* Carousel */
-    .carousel {
-      position: relative;
-    }
-
-    .carousel-item {
-      height: 500px;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* Aumenta o tamanho da imagem e do carrossel em resoluções maiores */
-    @media (min-width: 1200px) {
-      .carousel-item {
-        height: 700px;
-        /* Aumenta a altura do carrossel */
-      }
-
-      .carousel-item img {
-        width: 120%;
-        /* Expande a largura da imagem para ocupar mais espaço */
-      }
-    }
-
-    @media (min-width: 1600px) {
-      .carousel-item {
-        height: 900px;
-        /* Aumenta ainda mais a altura para fullscreen */
-      }
-
-      .carousel-item img {
-        width: 140%;
-        /* Expande ainda mais a imagem para preencher completamente */
-      }
-    }
-
-
-    /* Imagem sobreposta */
-    .upperteste {
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      /* Limita a largura para evitar cortes */
-      height: auto;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    /* Seções adicionais */
-    .cardapio-title {
-      background-color: #faf8f8;
-      margin: 0 auto;
-      font-size: 70px;
-      font-family: "Permanent Marker", cursive;
-      text-align: center;
-    }
-
-    .cardapio-text {
-      font-size: 30px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .about-us {
-      background-color: #192025;
-      color: #F8F9FA;
-      text-align: center;
-      margin-top: -7px;
-    }
-
-    .about-us-title {
-      font-size: 80px;
-      font-family: "Permanent Marker", cursive;
-    }
-
-    .about-us-text {
-      font-size: 40px;
-      font-family: "Permanent Marker", cursive;
-      word-break: break-all;
-    }
-
-    .barman {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Footer */
-    .footer {
-      background-color: #192025;
-    }
-
-    .footer .contato {
-      color: #F8F9FA;
-    }
-
-    /* Outros estilos */
-    .testeteste {
-      background-color: #F8F9FA;
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .row {
-      margin: 0;
-      padding: 0;
-      border: 0;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-      z-index: 3;
-    }
-
-
-    /* Overlay geral */
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: none;
-      /* Escondido inicialmente */
-      justify-content: center;
-      align-items: center;
-      z-index: 1051;
-      padding: 20px;
-    }
-
-    /* Conteúdo do overlay */
-    .overlay-content {
-      display: flex;
-      flex-direction: row;
-      background-color: #333;
-      color: #f8f9fa;
-      border-radius: 10px;
-      max-width: 80%;
-      max-height: 90%;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Imagem dentro do overlay */
-    .overlay img {
-      width: 50%;
-      max-width: 400px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px 0 0 10px;
-    }
-
-    /* Texto do overlay */
-    .overlay-text {
-      position: relative;
-      padding: 20px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      font-family: 'Permanent Marker', cursive;
-    }
-
-    /* Botão de Fechamento no Overlay */
-    .overlay-close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      color: #ffffff;
-      cursor: pointer;
-    }
-
-    .overlay-close:hover {
-      color: #ff4d4d;
-    }
-
-    /* Estilos para título e descrição */
-    .overlay-title {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #f1f1f1;
-    }
-
-    .overlay-description {
-      font-size: 1.1rem;
-      color: #e0e0e0;
-      line-height: 1.5;
-    }
-
-    /* Ajustes para telas pequenas */
-    @media (max-width: 768px) {
-      .overlay-content {
-        flex-direction: column;
-        /* Muda para coluna em telas pequenas */
-        width: 90%;
-        /* Aumenta a largura para caber melhor */
-      }
-
-      .overlay img {
-        width: 100%;
-        /* Imagem ocupa toda a largura no topo */
-        max-height: 250px;
-        /* Limita a altura da imagem em telas pequenas */
-        border-radius: 10px 10px 0 0;
-      }
-
-      .overlay-text {
-        padding: 15px;
-      }
-
-      .overlay-title {
-        font-size: 1.5rem;
-      }
-
-      .overlay-description {
-        font-size: 1rem;
-      }
-    }
-
-    .overlay.active {
-      display: flex;
-      /* Mostra o overlay quando está ativo */
-    }
-
-
-    /* Estilo modernizado para os cards */
-    .card {
-      background-color: #333;
-      /* Cinza escuro */
-      color: #f8f9fa;
-      /* Texto branco para contraste */
-      font-family: 'Permanent Marker', cursive;
-      /* Fonte igual à da navbar */
-      border: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      /* Efeito de destaque ao passar o mouse */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      /* Sombra para destaque */
-    }
-
-    .card-title {
-      color: #ffffff;
-      /* Branco para contraste no fundo escuro */
-      font-size: 1.5rem;
-      /* Tamanho maior para destacar o título */
-    }
-
-    .card-text {
-      color: #e0e0e0;
-      /* Cinza claro para o texto */
-      font-size: 1rem;
-    }
-
-    .card-img-top {
-      height: 225px;
-      object-fit: cover;
-      filter: grayscale(30%);
-      border-radius: 5px 5px 0 0;
-    }
-
-    .btn-outline-secondary {
-      color: #f8f9fa;
-      border-color: #f8f9fa;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .btn-outline-secondary:hover {
-      background-color: #f8f9fa;
-      /* Inverte cores no hover */
-      color: #333;
-    }
-
-    /* Estilo para o card como botão */
-    .card-link {
-      color: inherit;
-      /* Mantém a cor do texto */
-      text-decoration: none;
-      /* Remove sublinhado */
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-link:hover {
-      transform: scale(1.05);
-      /* Aumenta levemente o card no hover */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-      /* Sombra para efeito de botão */
-    }
-
-    .card-title,
-    .card-text {
-      font-family: 'Permanent Marker', cursive;
-      color: #ffffff;
-    }
-  </style>
 </head>
 
 <body>
@@ -478,7 +62,7 @@
       </button>
 
       <!-- Imagem sobreposta -->
-      <img src="upper1.png" alt="upper1" class="upperteste" loading="eager">
+      <img src="/images/baixocarousel.png" alt="upper1" class="upperteste">
     </div>
 
     <!-- Seção do Cardápio -->
@@ -495,7 +79,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Caipirinha"
               data-description="Essa magia acontece com apenas 4 ingredientes: cachaça, limão, açúcar e gelo."
               data-img-src="images/caipirinha.webp" style="text-decoration: none;">
-              <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha" loading="lazy">
+              <img src="images/caipirinha.webp" class="card-img-top" alt="Caipirinha">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Caipirinha</h5>
               </div>
@@ -506,7 +90,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Piña Colada"
               data-description="Oriunda de Porto Rico, a tradicional Piña Colada é feita de rum, leite de coco e suco de abacaxi."
               data-img-src="/images/pinacolada.jpg" style="text-decoration: none;">
-              <img src="/images/pinacolada.jpg" class="card-img-top" alt="Piña Colada" loading="lazy">
+              <img src="/images/pinacolada.jpg" class="card-img-top" alt="Piña Colada">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Piña Colada</h5>
               </div>
@@ -517,7 +101,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Negroni"
               data-description="Imagine 1 dose de gim, 1 dose de Campari, 1 dose de vermute tinto e 1 rodela de laranja. Junte tudo e adicione cubos de gelo para servir bem geladinho."
               data-img-src="images/negroni.jpg" style="text-decoration: none;">
-              <img src="images/negroni.jpg" class="card-img-top" alt="Negroni" loading="lazy">
+              <img src="images/negroni.jpg" class="card-img-top" alt="Negroni">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Negroni</h5>
               </div>
@@ -528,7 +112,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Cosmopolitan"
               data-description="O Cosmopolitan é uma bebida que envolve vodka, licor de laranja ou suco de limão, suco de Cranberry."
               data-img-src="images/cosmopolitan.jpg" style="text-decoration: none;">
-              <img src="images/cosmopolitan.jpg" class="card-img-top" alt="Cosmopolitan" loading="lazy">
+              <img src="images/cosmopolitan.jpg" class="card-img-top" alt="Cosmopolitan">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Cosmopolitan</h5>
               </div>
@@ -539,7 +123,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Margarita"
               data-description="Leva tequila, suco de limão e licor de laranja." data-img-src="images/margarita.jpg"
               style="text-decoration: none;">
-              <img src="images/margarita.jpg" class="card-img-top" alt="Margarita" loading="lazy">
+              <img src="images/margarita.jpg" class="card-img-top" alt="Margarita">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Margarita</h5>
               </div>
@@ -550,7 +134,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Mojito"
               data-description="Drink cubano à base de rum branco, açúcar, hortelã, limão e água gaseificada."
               data-img-src="images/mojito.jpg" style="text-decoration: none;">
-              <img src="images/mojito.jpg" class="card-img-top" alt="Mojito" loading="lazy">
+              <img src="images/mojito.jpg" class="card-img-top" alt="Mojito">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Mojito</h5>
               </div>
@@ -561,7 +145,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Sex on the Beach"
               data-description="Leva vodka gelada, licor de pêssego, suco de laranja, algumas gotas de xarope de groselha para decorar e 2 pedras de gelo moídas."
               data-img-src="images/sexonthebeach.webp" style="text-decoration: none;">
-              <img src="images/sexonthebeach.webp" class="card-img-top" alt="Sex on the Beach" loading="lazy">
+              <img src="images/sexonthebeach.webp" class="card-img-top" alt="Sex on the Beach">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Sex on the Beach</h5>
               </div>
@@ -572,7 +156,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Hanky Panky"
               data-description="London Dry Gin, vermute doce e Fernet são seus ingredientes, e esse último dá um toque mentolado delicioso à bebida."
               data-img-src="images/hankypanky.png" style="text-decoration: none;">
-              <img src="images/hankypanky.png" class="card-img-top" alt="Hanky Panky" loading="lazy">
+              <img src="images/hankypanky.png" class="card-img-top" alt="Hanky Panky">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Hanky Panky</h5>
               </div>
@@ -583,7 +167,7 @@
             <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Aperol Spritz"
               data-description="Feita a partir da infusão de raízes e ervas, entre elas o ruibarbo, que dá o toque amargo da bebida e também a cor peculiar, laranjas e outras especiarias combinadas à água, álcool e açúcar."
               data-img-src="images/aperolspritz.jpg" style="text-decoration: none;">
-              <img src="images/aperolspritz.jpg" class="card-img-top" alt="Aperol Spritz" loading="lazy">
+              <img src="images/aperolspritz.jpg" class="card-img-top" alt="Aperol Spritz">
               <div class="card-body text-center d-flex flex-column">
                 <h5 class="card-title">Aperol Spritz</h5>
               </div>
@@ -610,14 +194,13 @@
     </div>
 
     <div>
-      <img src="teste6.png" alt="testeteste" class="testeteste">
+      <img src="/images/cimafooter.png" alt="testeteste" class="testeteste">
     </div>
 
     <!-- Seção Sobre Nós -->
     <div class="about-us">
-      <p class="about-us-title">SOBRE NÓS</p>
-      <p class="about-us-text">blablablabalbablbalablablablba</p>
-      <img src="barman.png" alt="barman" class="barman">
+      <p class="about-us-title">Visite nossas redes!</p>
+      <img src="/images/barman.png" alt="barman" class="barman">
     </div>
   </main>
 
@@ -626,10 +209,10 @@
     <div id="footer" class="contato container text-center">
       <div class="row">
         <div class="col">
-          REDES SOCIAIS
+          <a href="https://www.instagram.com" target="_blank" class="footer-link">INSTAGRAM</a>
         </div>
         <div class="col">
-          ATENDIMENTO
+          <a href="https://web.whatsapp.com" target="_blank" class="footer-link">WHATSAPP</a>
         </div>
       </div>
     </div>
@@ -640,51 +223,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-  <!-- Script para mudar o fundo da navbar ao rolar a página -->
-  <script>
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('solid');
-      } else {
-        navbar.classList.remove('solid');
-      }
-    });
-  </script>
-
-  <script>
-    // Referências ao overlay e ao conteúdo do overlay
-    const overlay = document.getElementById('imageOverlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const overlayTitle = document.getElementById('overlayTitle');
-    const overlayDescription = document.getElementById('overlayDescription');
-
-    // Função para abrir o overlay com a imagem e descrição específica
-    function showOverlay(imageSrc, title, description) {
-      overlayImage.src = imageSrc;
-      overlayTitle.textContent = title;
-      overlayDescription.textContent = description;
-      overlay.classList.add('active');
-    }
-
-    // Função para fechar o overlay
-    function closeOverlay() {
-      overlay.classList.remove('active');
-    }
-
-    // Event listeners para os cards
-    document.querySelectorAll('.card-link').forEach((card) => {
-      card.addEventListener('click', (event) => {
-        event.preventDefault(); // Evita comportamento padrão do link
-        const cardImage = card.getAttribute('data-img-src');
-        const cardTitle = card.getAttribute('data-title');
-        const cardDescription = card.getAttribute('data-description');
-        showOverlay(cardImage, cardTitle, cardDescription);
-      });
-    });
-
-  </script>
+  <script src="scripts.js"></script>
 
 </body>
 
