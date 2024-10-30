@@ -1,4 +1,8 @@
 /* Navbar */
+body {
+    background-color: #fbf9f9;
+}
+
 .navbar {
     position: fixed;
     top: 0;
@@ -420,9 +424,20 @@
 .alcoolicos {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
-    margin: 0 auto;
     font-size: 40px;
     background-color: #22262a;
     color: #f9fafb;
-    margin-left: calc(-50vw + 50%); /* Centraliza a faixa */
-}
+    border-radius: 10px;
+    width: 100%;
+    margin: 0;
+  }
+  .nalcoolicos {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 40px;
+    background-color: #22262a;
+    color: #f9fafb;
+    border-radius: 10px;
+    width: 100%;
+    margin: 0;
+  }
