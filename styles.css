@@ -416,3 +416,13 @@
     font-family: 'Permanent Marker', cursive;
     color: #ffffff;
 }
+
+.alcoolicos {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    margin: 0 auto;
+    font-size: 40px;
+    background-color: #22262a;
+    color: #f9fafb;
+    margin-left: calc(-50vw + 50%); /* Centraliza a faixa */
+}

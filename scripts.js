@@ -53,3 +53,10 @@ document.querySelector('.nav-link[href="#cardapio"]').addEventListener('click', 
         behavior: 'smooth'
     });
 });
+
+// Função para fechar o overlay ao clicar fora dele
+overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) {
+        closeOverlay();
+    }
+});
