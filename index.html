@@ -16,11 +16,9 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
   <link rel="stylesheet" href="styles.css">
-
 </head>
 
 <body>
-
   <!-- Navbar -->
   <div class="navlogo">
     <img src="images/nav1.svg" class="navlogoimg navmedia">
@@ -34,9 +32,6 @@
       <a href="#cardapio" class="nav-link">Cardápio</a>
     </div>
   </nav>
-
-
-  </div>
 
   <main>
     <!-- Carousel -->
@@ -71,12 +66,10 @@
       <p class="cardapio-text">Escolha seu drink e peça diretamente no balcão</p>
     </div>
 
-
-    <div class="album py-5 bg-bod y-tertiary">
+    <div class="album py-2 bg-body-tertiary">
       <div class="container-fluid">
-          <div class="alcoolicos">
-            <p>Alcoólicos</p>
-          </div>
+        <div class="alcoolicos">
+          <p>Alcoólicos</p>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
@@ -184,8 +177,7 @@
     </div>
 
     <!-- Cardapio 2 -->
-    
-    <div class="album py-5 bg-body-tertiary">
+    <div class="album py-2 bg-body-tertiary">
       <div class="container-fluid">
         <div class="nalcoolicos">
           <p>Não Alcoólicos</p>
@@ -194,22 +186,43 @@
 
           <!-- Exemplo de Card -->
           <div class="col">
-            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Gin Tônica"
-              data-description="Um drink refrescante feito com gin, água tônica e limão."
-              data-img-src="images/gintonic.jpg" style="text-decoration: none;">
-              <img src="images/gintonic.jpg" class="card-img-top" alt="Gin Tônica">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Mocktail Morango"
+              data-description="Leva o morango, hortelã, mel, açúcar, suco de limão e água com gás."
+              data-img-src="images/mocktailmorango.avif" style="text-decoration: none;">
+              <img src="images/mocktailmorango.avif" class="card-img-top" alt="Mocktail Morango">
               <div class="card-body text-center d-flex flex-column">
-                <h5 class="card-title">Gin Tônica</h5>
+                <h5 class="card-title">Mocktail Morango</h5>
               </div>
             </a>
           </div>
 
-          <!-- Adicione mais cards conforme necessário -->
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Margarita Cítrica"
+              data-description="Leva limão tahiti, laranja e Margarita Mixer para garantir o sabor inconfundível do clássico coquetel."
+              data-img-src="images/margaritacitrica.jpg" style="text-decoration: none;">
+              <img src="images/margaritacitrica.jpg" class="card-img-top" alt="Margarita citrica">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Margarita Cítrica</h5>
+              </div>
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="#" class="card shadow-sm h-100 d-flex flex-column card-link" data-title="Limonada Rosa"
+              data-description="Leva morango, melancia, xarope de groselha e suco de cranberry."
+              data-img-src="images/limonadarosa.jpg" style="text-decoration: none;">
+              <img src="images/limonadarosa.jpg" class="card-img-top" alt="Limonada Rosa">
+              <div class="card-body text-center d-flex flex-column">
+                <h5 class="card-title">Limonada Rosa</h5>
+              </div>
+            </a>
+          </div>
 
         </div>
       </div>
     </div>
 
+    <!-- Overlay -->
     <div class="overlay" id="imageOverlay">
       <div class="overlay-content">
         <img id="overlayImage" src="" alt="Overlay Image">
@@ -221,45 +234,50 @@
       </div>
     </div>
 
-    </div>
-    </div>
-    </div>
+    <!-- Footer Iniciado com a Imagem -->
+    <footer class="footer text-body-secondary py-5">
+      <!-- Imagem no Início do Footer -->
+      <div class="footer-image">
+        <img src="/images/cimafooter.png" alt="imagem inicio footer" class="testeteste">
+      </div>
 
-    <div>
-      <img src="/images/cimafooter.png" alt="testeteste" class="testeteste">
-    </div>
+      <!-- Seção Sobre Nós -->
+      <div class="about-us">
+        <p class="about-us-title">Sobre Nós</p>
+        <p class="about-us-text">ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatibus minima sit
+          architecto aut nihil
+          temporibus sunt consectetur ducimus debitis, velit ad animi voluptates quas! Voluptate, explicabo. Aliquam,
+          fuga esse.</p>
+        <img src="/images/barman.png" alt="barman" class="barman">
+      </div>
 
-    <!-- Seção Sobre Nós -->
-    <div class="about-us">
-      <p class="about-us-title">Sobre Nós</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatibus minima sit architecto aut nihil
-        temporibus sunt consectetur ducimus debitis, velit ad animi voluptates quas! Voluptate, explicabo. Aliquam, fuga
-        esse.</p>
-      <img src="/images/barman.png" alt="barman" class="barman">
-    </div>
-  </main>
+      <!-- Informações Adicionais -->
+      <div class="msg">
+        <p class="beba">BEBA COM MODERAÇÃO</p>
+        <p class="dirija">SE BEBER NÃO DIRIJA</p>
+      </div>
+      <p class="siganos">SIGA-NOS</p>
 
-  <!-- Footer -->
-  <footer class="footer text-body-secondary py-5">
-    <div id="footer" class="contato container text-center">
-      <div class="row">
-        <div class="col">
-          <a href="https://www.instagram.com" target="_blank" class="footer-link">INSTAGRAM</a>
-        </div>
-        <div class="col">
-          <a href="https://web.whatsapp.com" target="_blank" class="footer-link">WHATSAPP</a>
+      <!-- Links de Redes Sociais -->
+      <div class="contato container text-center">
+        <div class="d-flex justify-content-center gap-4">
+          <a href="https://www.instagram.com" target="_blank" class="footer-link">
+            <img src="images/ig.webp" alt="Instagram" class="footer-icon">
+            INSTAGRAM
+          </a>
+          <a href="https://web.whatsapp.com" target="_blank" class="footer-link">
+            <img src="images/wpp.webp" alt="WhatsApp" class="footer-icon">
+            WHATSAPP
+          </a>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-
-  <script src="scripts.js"></script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>

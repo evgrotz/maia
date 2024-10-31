@@ -185,26 +185,31 @@ body {
 }
 
 /* Footer */
-
 .footer {
     background-color: #192025;
-}
-
-.footer-link {
-    text-decoration: none;
-    color: #fff;
-}
-
-.about-us {
-    background-color: #192025;
     color: #F8F9FA;
+    padding: 20px 0;
     text-align: center;
-    margin-top: -7px;
+    padding: 0px 0 !important;
+    min-height: 600px;
+    /* Ajuste conforme necessário */
+}
+
+/* Sobre Nós */
+.about-us {
+    padding: 20px 0;
 }
 
 .about-us-title {
-    font-size: 40px;
+    font-size: 15px;
     font-family: "Permanent Marker", cursive;
+    color: #f9fafb;
+}
+
+.about-us-text {
+    font-size: 15px;
+    font-family: bold;
+    color: #f9fafb;
 }
 
 .barman {
@@ -212,26 +217,61 @@ body {
     height: auto;
 }
 
+/* Mensagens */
+.msg {
+    margin: 10px 0;
+    /* Espaçamento reduzido para manter próximo ao conteúdo */
+}
+
+.beba,
+.dirija {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.2rem;
+    color: #F8F9FA;
+    margin: 0;
+}
+
+.dirija {
+    font-size: 0.9rem;
+}
+
+.siganos {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+    color: #F8F9FA;
+    margin: 10px 0;
+    /* Espaço entre "SIGA-NOS" e os links */
+}
+
+/* Redes Sociais */
+.footer-link {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.2rem;
+}
+
+.footer-icon {
+    width: 40px;
+    height: 30px;
+}
 
 /* Outros estilos */
 .testeteste {
-    background-color: #F8F9FA;
+    background-color: #f9fafb;
     max-width: 100%;
     height: auto;
     display: block;
-}
-
-.row {
-    margin: 0;
-    padding: 0;
-    border: 0;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     z-index: 3;
 }
-
 
 /* Overlay geral */
 
@@ -429,9 +469,10 @@ body {
     color: #f9fafb;
     border-radius: 10px;
     width: 100%;
-    margin: 0;
-  }
-  .nalcoolicos {
+    margin-top: 25px;
+}
+
+.nalcoolicos {
     text-align: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 40px;
@@ -439,5 +480,5 @@ body {
     color: #f9fafb;
     border-radius: 10px;
     width: 100%;
-    margin: 0;
-  }
+    margin-top: 35px;
+}
