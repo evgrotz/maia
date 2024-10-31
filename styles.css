@@ -61,7 +61,8 @@ body {
     .navbar .nav-link {
         font-size: 2rem;
         position: relative;
-        top: -15px;
+        top: -5px;
+        left: 15px;
     }
 
     .navbar.solid .nav-link {
