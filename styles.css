@@ -98,6 +98,38 @@ body {
     }
 }
 
+@media (min-width: 800px) {
+    .navbar .navbar-brand {
+        font-size: 3.0rem;
+    }
+
+    .navbar .navbar-brand img {
+        width: 30px;
+        height: auto;
+    }
+
+    .navbar .nav-link {
+        margin-bottom: 15px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .navbar .navbar-brand {
+        font-size: 4.0rem;
+    }
+
+    .navbar .navbar-brand img {
+        width: 50px;
+        height: auto;
+    }
+
+    .navbar .nav-link {
+        margin-bottom: 45px;
+    }
+
+}
+
 .navlogo {
     z-index: 3;
     pointer-events: none;
@@ -121,7 +153,7 @@ body {
 }
 
 .carousel-item {
-    height: 500px;
+    height: 300px;
     align-items: center;
     justify-content: center;
 }
@@ -131,6 +163,30 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+}
+
+@media (min-width: 500px) {
+    .carousel-item {
+        height: 400px;
+        /* Aumenta ainda mais a altura para fullscreen */
+    }
+
+    .carousel-item img {
+        width: 80%;
+        /* Expande ainda mais a imagem para preencher completamente */
+    }
+}
+
+@media (min-width: 800px) {
+    .carousel-item {
+        height: 600px;
+        /* Aumenta ainda mais a altura para fullscreen */
+    }
+
+    .carousel-item img {
+        width: 100%;
+        /* Expande ainda mais a imagem para preencher completamente */
+    }
 }
 
 /* Aumenta o tamanho da imagem e do carrossel em resoluções maiores */
@@ -181,6 +237,13 @@ body {
     text-align: center;
 }
 
+@media (max-width: 457px) {
+    .card-title.cosmopolitan-title {
+        font-size: 1.3rem;
+        /* Reduz apenas um pouco para caber */
+    }
+}
+
 .cardapio-text {
     font-size: 30px;
     margin: 0 auto;
@@ -218,6 +281,28 @@ body {
 .barman {
     max-width: 100%;
     height: auto;
+}
+
+@media (min-width: 1400px) {
+    .barman {
+        height: 400px;
+        /* Altere este valor para a altura desejada */
+        width: 100%;
+        /* Garante que a largura ocupe toda a tela */
+        object-fit: cover;
+        /* Mantém a proporção e corta se necessário */
+    }
+}
+
+@media (min-width: 1600px) {
+    .barman {
+        height: 300px;
+        /* Altere este valor para a altura desejada */
+        width: 100%;
+        /* Garante que a largura ocupe toda a tela */
+        object-fit: cover;
+        /* Mantém a proporção e corta se necessário */
+    }
 }
 
 /* Mensagens */
